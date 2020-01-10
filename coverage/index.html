@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-10T04:43:16+00:00">2020-01-10T04:43:16+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-10T04:44:50+00:00">2020-01-10T04:44:50+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         45.9
+         46.1
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>1</b> files in total.
-    <b>55</b> relevant lines. 
-    <span class="green"><b>55</b> lines covered</span> and
+    <b>56</b> relevant lines. 
+    <span class="green"><b>56</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -54,10 +54,10 @@
         <td class="strong"><a href="#f3079f48882eef578bf5f9d6fdacfc5115f148af" class="src_link" title="lib/tic_tac_toe.rb">lib/tic_tac_toe.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>195</td>
-        <td>55</td>
-        <td>55</td>
+        <td>56</td>
+        <td>56</td>
         <td>0</td>
-        <td>45.9</td>
+        <td>46.1</td>
       </tr>
       
     </tbody>
@@ -81,8 +81,8 @@
     <h3>lib/tic_tac_toe.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>55</b> relevant lines. 
-      <span class="green"><b>55</b> lines covered</span> and
+      <b>56</b> relevant lines. 
+      <span class="green"><b>56</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -408,44 +408,44 @@
           <code class="ruby">def won?(board)</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="54">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="32" data-linenumber="54">
+          <span class="hits">32</span>
           
           <code class="ruby">  index = 0</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="55">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="32" data-linenumber="55">
+          <span class="hits">32</span>
           
           <code class="ruby">  while index &lt; WIN_COMBINATIONS.size</code>
         </li>
       
-        <li class="covered" data-hits="181" data-linenumber="56">
-          <span class="hits">181</span>
+        <li class="covered" data-hits="185" data-linenumber="56">
+          <span class="hits">185</span>
           
           <code class="ruby">    sub_index = 0</code>
         </li>
       
-        <li class="covered" data-hits="181" data-linenumber="57">
-          <span class="hits">181</span>
+        <li class="covered" data-hits="185" data-linenumber="57">
+          <span class="hits">185</span>
           
           <code class="ruby">    compaire_array =[]</code>
         </li>
       
-        <li class="covered" data-hits="181" data-linenumber="58">
-          <span class="hits">181</span>
+        <li class="covered" data-hits="185" data-linenumber="58">
+          <span class="hits">185</span>
           
           <code class="ruby">    while sub_index &lt; WIN_COMBINATIONS[index].size</code>
         </li>
       
-        <li class="covered" data-hits="543" data-linenumber="59">
-          <span class="hits">543</span>
+        <li class="covered" data-hits="555" data-linenumber="59">
+          <span class="hits">555</span>
           
           <code class="ruby">      compaire_array &lt;&lt; board[WIN_COMBINATIONS[index][sub_index]]</code>
         </li>
       
-        <li class="covered" data-hits="543" data-linenumber="60">
-          <span class="hits">543</span>
+        <li class="covered" data-hits="555" data-linenumber="60">
+          <span class="hits">555</span>
           
           <code class="ruby">      sub_index +=1</code>
         </li>
@@ -456,14 +456,14 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="181" data-linenumber="62">
-          <span class="hits">181</span>
+        <li class="covered" data-hits="185" data-linenumber="62">
+          <span class="hits">185</span>
           
           <code class="ruby">      if compaire_array.all?(&quot;O&quot;) || compaire_array.all?(&quot;X&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="63">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="16" data-linenumber="63">
+          <span class="hits">16</span>
           
           <code class="ruby">        return WIN_COMBINATIONS[index]</code>
         </li>
@@ -660,8 +660,8 @@
           <code class="ruby">def winner(board)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="96">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="5" data-linenumber="96">
+          <span class="hits">5</span>
           
           <code class="ruby">  won?(board) &amp;&amp; board[won?(board)[0]]</code>
         </li>
@@ -804,10 +804,10 @@
           <code class="ruby">  if won?(board)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="120">
+        <li class="covered" data-hits="3" data-linenumber="120">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    puts &quot;Congratulations #{winner(board)}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="121">
