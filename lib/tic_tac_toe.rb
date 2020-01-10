@@ -24,19 +24,26 @@ def position_taken?(board,index)
 end
 
 def valid_move?(board,index)
-  location.between?(0,8) && !position_taken?(board,index)
+  index.between?(0,8) && !position_taken?(board,index)
 end
 
 def turn(board)
   puts "PLease enter a number between 1-9"
   input = gets.strip
   index = input_to_index(input)
+  if valid_move?(board,index)
+    move(board,index,token)
+  end
 end
 
 def turn_count(board)
   board.count do |position|
     position != " "
   end
+end
+
+def current_player(board)
+  turn_count(board) % 2 == 0 ? "X" : "O"
 end
 # def turn (board,player = current_player(board))
 #   puts "Please enter 1-9:"
