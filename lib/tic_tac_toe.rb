@@ -97,6 +97,30 @@ def winner(board)
 end
 
 
+# def play (board)
+#   if turn_count(board) > 1
+#     turn(board,current_player(board))
+#   else
+#       # current_player(board)
+#       # turn(board,current_player(board))
+#       if !over?(board) || !draw?(board)
+#         if won?(board)
+#           winner = winner(board)
+#           puts "Congratulations #{winner}!"
+#         end
+#       end
+#       turn_count(board)
+#   end
+# end
+def play(board)
+  until over?(board)
+    turn(board)  
+  
+  end
+end
+
+
+
 
 # def turn (board,player = current_player(board))
 #   puts "Please enter 1-9:"
@@ -165,18 +189,3 @@ end
 #     end
 # end
 #
-# def play (board)
-#   if turn_count(board) > 1
-#     turn(board,current_player(board))
-#   else
-#       # current_player(board)
-#       # turn(board,current_player(board))
-#       if !over?(board) || !draw?(board)
-#         if won?(board)
-#           winner = winner(board)
-#           puts "Congratulations #{winner}!"
-#         end
-#       end
-#       turn_count(board)
-#   end
-# end
