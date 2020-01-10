@@ -66,17 +66,6 @@ def won?(board)
   end
   return nil
 end
-# def won?(board)
-#   WIN_COMBINATIONS.detect do |win_combo|
-#     position_1 = board[win_combo[0]]
-#     position_2 = board[win_combo[1]]
-#     position_3 = board[win_combo[2]]
-#
-#     position_1 == "X" && position_2 == "X" && position_3 == "X"
-#     position_1 == "O" && position_2 == "O" && position_3 == "O"
-#   end
-#   return
-# end
 
 def full?(board)
   board.all? do |position|
@@ -96,87 +85,13 @@ def winner(board)
   won?(board) && board[won?(board)[0]]
 end
 
-
-
-# def turn (board,player = current_player(board))
-#   puts "Please enter 1-9:"
-#   input = input_to_index(gets.strip)
-#   if !valid_move?(board,input)
-#     turn(board)
-#   end
-#   move(board,input,current_player(board))
-#   display_board(board)
-#   play(board)
-# end
-#
-# def turn_count(board)
-#   count = board.count {|field| field == "X" ||field == "O" }
-# end
-#
-# def current_player (board)
-#   if turn_count(board) % 2 == 0 || turn_count(board) == 0
-#     return "X"
-#   else
-#     return "O"
-#   end
-# end
-#
-# def won?(board)
-#   index = 0
-#   while index < WIN_COMBINATIONS.size
-#     sub_index = 0
-#     compaire_array =[]
-#     while sub_index < WIN_COMBINATIONS[index].size
-#       compaire_array << board[WIN_COMBINATIONS[index][sub_index]]
-#       sub_index +=1
-#     end
-#       if compaire_array.all?("O") || compaire_array.all?("X")
-#         return WIN_COMBINATIONS[index]
-#       end
-#
-#     index += 1
-#   end
-#   return nil
-# end
-#
-# def full?(board)
-#   (0..8).to_a.map { |i| position_taken?(board, i) }.all?
-# end
-#
-# def draw?(board)
-#   if full?(board) && !won?(board)
-#     return true
-#   end
-# end
-#
-# def over?(board)
-#   if won?(board) || draw?(board) ||full?(board)
-#     return true
-#   end
-# end
-#
-# def winner(board)
-#   winner = won?(board)
-#     if winner == nil
-#       return nil
-#     else
-#       a=board[winner.first]
-#       return a
-#     end
-# end
-#
-# def play (board)
-#   if turn_count(board) > 1
-#     turn(board,current_player(board))
-#   else
-#       # current_player(board)
-#       # turn(board,current_player(board))
-#       if !over?(board) || !draw?(board)
-#         if won?(board)
-#           winner = winner(board)
-#           puts "Congratulations #{winner}!"
-#         end
-#       end
-#       turn_count(board)
-#   end
-# end
+def play(board)
+  until over?(board)
+    turn(board)
+  end
+  if won?(board)
+    puts "Congratulations #{winner(board)}!"
+  else
+    puts "Cat's Game!"
+  end
+end
