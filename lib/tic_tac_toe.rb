@@ -1,4 +1,4 @@
-
+require 'pry'
 
 WIN_COMBINATIONS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 
@@ -32,8 +32,11 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board,index)
-    token = current_player(board)
-    move(board,index,token
+    move(board,index,current_player(board))
+    display_board(board)
+  else
+    puts "Whoops! That's not a valid move"
+    turn(board)
   end
 end
 
@@ -46,6 +49,55 @@ end
 def current_player(board)
   turn_count(board) % 2 == 0 ? "X" : "O"
 end
+
+def won?(board)
+  index = 0
+  while index < WIN_COMBINATIONS.size
+    sub_index = 0
+    compaire_array =[]
+    while sub_index < WIN_COMBINATIONS[index].size
+      compaire_array << board[WIN_COMBINATIONS[index][sub_index]]
+      sub_index +=1
+    end
+      if compaire_array.all?("O") || compaire_array.all?("X")
+        return WIN_COMBINATIONS[index]
+      end
+    index += 1
+  end
+  return nil
+end
+# def won?(board)
+#   WIN_COMBINATIONS.detect do |win_combo|
+#     position_1 = board[win_combo[0]]
+#     position_2 = board[win_combo[1]]
+#     position_3 = board[win_combo[2]]
+#
+#     position_1 == "X" && position_2 == "X" && position_3 == "X"
+#     position_1 == "O" && position_2 == "O" && position_3 == "O"
+#   end
+#   return
+# end
+
+def full?(board)
+  board.all? do |position|
+      position == "X" || position == "O"
+  end
+end
+
+def draw?(board)
+  !won?(board) && full?(board)
+end
+
+def over?(board)
+  won?(board) || draw?(board)
+end
+
+def winner(board)
+  won?(board) && board[won?(board)[0]]
+end
+
+
+
 # def turn (board,player = current_player(board))
 #   puts "Please enter 1-9:"
 #   input = input_to_index(gets.strip)
